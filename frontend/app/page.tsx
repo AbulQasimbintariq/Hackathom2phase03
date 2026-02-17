@@ -6,6 +6,8 @@ import { api } from '@/lib/api'
 import TaskList from '@/components/TaskList'
 import CreateTaskForm from '@/components/CreateTaskForm'
 import TaskFilter from '@/components/TaskFilter'
+type Task = { id: string; title: string; description?: string; completed?: boolean; created_at?: string; due_date?: string }
+
 
 export default function Page() {
     const searchParams = useSearchParams()
