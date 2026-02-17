@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: task-api
+    runtime: python
+    plan: free
+    pythonVersion: 3.11
+    buildCommand: >
+      pip install -r requirements.txt &&
+      alembic -c alembic.ini upgrade head
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: DATABASE_URL
+        scope: web
+        value: ${DATABASE_URL}
+      - key: ENV
+        scope: web
+        value: production
+      - key: JWT_SECRET
+        scope: web
+        value: ${JWT_SECRET}
+      - key: ALLOWED_ORIGINS
+        scope: web
+        value: ${VERCEL_DOMAIN}
+
+databases:
+  - name: postgres
+    plan: free
+    version: 15
+    databaseName: tasks_db
+    user: postgres

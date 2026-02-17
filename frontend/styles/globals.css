@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic global styles */
+html, body { height: 100%; }
+body { @apply bg-gray-50; }
+
+/* Mobile-first responsive enhancements */
+@layer components {
+    input, textarea, select {
+        @apply text-base; /* Prevents mobile zoom on input focus */
+    }
+
+    button {
+        @apply transition-colors; /* Smooth button transitions */
+    }
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1025px) {
+    html {
+        font-size: 16px;
+    }
+}
+
