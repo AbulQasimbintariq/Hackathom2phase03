@@ -5,8 +5,9 @@ import { TaskIcon, ChatIcon } from '@/components/Icons'
 export const metadata = {
     title: 'Tasks',
     description: 'Task CRUD UI with Chat Assistant',
-    viewport: 'width=device-width, initial-scale=1.0',
 }
+
+export const viewport = 'width=device-width, initial-scale=1.0'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
