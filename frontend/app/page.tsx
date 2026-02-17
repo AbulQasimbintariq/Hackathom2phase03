@@ -9,7 +9,7 @@ import TaskFilter from '@/components/TaskFilter'
 
 export default function Page() {
     const searchParams = useSearchParams()
-    const [tasks, setTasks] = useState(null)
+    const [tasks, setTasks] = useState<Task[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
